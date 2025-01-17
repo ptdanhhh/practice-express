@@ -1,4 +1,3 @@
-import { error } from "console";
 import express, { Request, Response } from "express";
 import { v7 } from "uuid";
 
@@ -81,6 +80,7 @@ app.post("/v1/topics", (req: Request, res: Response) => {
     createdAt: new Date(),
     updatedAt: new Date(),
   };
+  //After create a newTopic push it to topics array
   topics.push(newTopic);
   res.status(201).json({ data: newTopic.id });
 });
@@ -89,7 +89,7 @@ app.post("/v1/topics", (req: Request, res: Response) => {
 app.get("/v1/topics/:id", (req: Request, res: Response) => {
   const { id } = req.params; // This to get the :id value
 
-  const topicById = topics.find((topic) => topic.id === id);
+  const topicById = topics.find((topic) => topic.id === id); // find  topic with id
 
   if (!topicById) {
     res.status(404).json({ error: "Topic not found" });
@@ -139,7 +139,7 @@ app.delete("/v1/topics/:id", (req: Request, res: Response) => {
   res.status(200).json({ data: true });
 });
 
-//List
+//List all data
 app.get("/v1/topics", (req: Request, res: Response) => {
   res.status(200).json({ data: topics });
 });
