@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import { setupTopicHTTPModule } from "./topic/module";
 
 dotenv.config();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 const app = express();
 
 //We have to tell express to use json
