@@ -1,6 +1,6 @@
-import { ITopicRepository, ITopicService } from "topic/interfaces";
-import { Topic } from "topic/model";
-import { TopicCreationDTO, TopicUpdateDTO } from "topic/model/dto";
+import { ITopicRepository, ITopicService } from "../interfaces";
+import { Topic } from "../model";
+import { TopicCreationDTO, TopicUpdateDTO } from "../model/dto";
 import {
   ErrTopicNameCannotEmpty,
   ErrTopicNameCannotDuplicate,
